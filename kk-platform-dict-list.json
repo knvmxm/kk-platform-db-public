@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "platform": "© KK Platform",
+    "partition": "Dictionaries",
+    "copyright": "© 2025 Конов Консалтинг (Konov Consulting). Все права защищены.",
+    "type": "Каталог справочников",
+    "name": "Список доступных справочников KK Platform",
+    "file_name": "dict-list.json",
+    "code": "dict-list",
+    "version": "1.0.0",
+    "github": "https://github.com/knvmxm/kk-platform-db-public",
+    "github_category": "NULL",
+    "create_date": "2025-05-22",
+    "last_updated": "2025-05-22"
+  },
+  "data": [
+    {
+      "category": "Единицы измерения",
+      "dictionaries": [
+        {
+          "code": "units-okei",
+          "name": "Справочник Единиц по ОКЕИ",
+          "description": "Общероссийский классификатор единиц измерения",
+          "file_name": "kk-platform-dict-units-okei.json",
+          "version": "1.0.0",
+          "last_updated": "2026-06-15"
+        },
+        {
+          "code": "units-logistics",
+          "name": "Единицы измерения в логистике",
+          "description": "Единицы измерения применяемые в логистике (включая ОКЕИ)",
+          "file_name": "kk-platform-dict-units-logitics.json",
+          "version": "1.0.0",
+          "last_updated": "2026-06-15"
+        },
+        {
+          "code": "units-wms",
+          "name": "Единицы измерения для WMS",
+          "description": "Единицы измерения для работы WMS (Warehouse Management System)",
+          "file_name": "kk-platform-dict-units-wms.json",
+          "version": "1.0.0",
+          "last_updated": "2026-06-15"
+        },
+        {
+          "code": "units-tms",
+          "name": "Единицы измерения для TMS",
+          "description": "Единицы измерения для работы TMS (Transport Management System)",
+          "file_name": "kk-platform-dict-units-tms.json",
+          "version": "1.0.0",
+          "last_updated": "2026-06-15"
+        },
+        {
+          "code": "units-yms",
+          "name": "Единицы измерения для YMS",
+          "description": "Единицы измерения для работы YMS (Yard Management System)",
+          "file_name": "kk-platform-dict-units-yms.json",
+          "version": "1.0.0",
+          "last_updated": "2026-06-15"
+        }
+      ]
+    }
+  ]
+}

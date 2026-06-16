@@ -69,32 +69,47 @@
 **Пример на JavaScript:**
 
 ```javascript
-async function getLogisticsUnits() {
-    const url = 'https://raw.githubusercontent.com/knvmxm/kk-platform-db-public/main/kk-platform-dict-units-logitics.json';
+async function loadKKDictionary(dictCode) {
+    const baseUrl = 'https://raw.githubusercontent.com/knvmxm/kk-platform-db-public/main/';
     
     try {
-        const response = await fetch(url + '?t=' + Date.now()); // ?t= для защиты от кэширования (получаем всегда актуальный справочник)
-        if (!response.ok) throw new Error('Network response was not ok');
-        
-        const json = await response.json();
-        
-        // 1. Проверяем метаданные
-        console.log(`Загружен: ${json._meta.name} (версия ${json._meta.version})`);
-        console.log(`Файл: ${json._meta.file_name}, дата обновления: ${json._meta.last_updated}`);
-        
-        // 2. Работаем с категориями и данными
-        json.data.forEach(categoryBlock => {
+        // 1. Сначала загружаем каталог справочников (dict-list.json)
+        // Добавляем параметр ?t=, чтобы получать актуальный каталог (убираем кэш браузера)
+        const resList = await fetch(baseUrl + 'dict-list.json?t=' + Date.now());
+        if (!resList.ok) throw new Error('Каталог не найден');
+        const catalog = await resList.json();
+
+        // 2. Ищем нужный справочник по его коду (например, 'units-logistics')
+        let targetDict = null;
+        for (const cat of catalog.data) {
+            targetDict = cat.dictionaries.find(d => d.code === dictCode);
+            if (targetDict) break;
+        }
+
+        if (!targetDict) throw new Error(`Справочник ${dictCode} не найден в каталоге`);
+
+        console.log(`Найден: ${targetDict.name} (версия ${targetDict.version})`);
+
+        // 3. Загружаем сам файл справочника
+        const resDict = await fetch(baseUrl + targetDict.file_name + '?t=' + Date.now());
+        if (!resDict.ok) throw new Error('Файл справочника не загружен');
+        const dictData = await resDict.json();
+
+        // 4. Работаем с данными (перебираем категории и элементы)
+        dictData.data.forEach(categoryBlock => {
             console.log(`\n--- Категория: ${categoryBlock.category} ---`);
-            
             categoryBlock.items.forEach(item => {
                 console.log(`[${item.code}] ${item.name} (${item.symbol_national})`);
             });
         });
-        
+
     } catch (error) {
-        console.error('Ошибка загрузки справочника:', error);
+        console.error('Ошибка:', error);
     }
 }
+
+// Пример вызова: загружаем логистические единицы
+// loadKKDictionary('units-logistics');
 ```
 
 ---

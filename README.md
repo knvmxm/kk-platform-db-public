@@ -1,5 +1,5 @@
 # kk-platform-db-public
-KK Platform Databases (Public)
+KK Platform-DB (Public)
 Публичные справочники и словари для моделирования, создания калькуляторов и логистических инструментов от Конов Консалтинг (Konov Consulting).
 
 Этот репозиторий создан для централизованного хранения актуальных нормативных и справочных данных (ОКЕИ, Типы транспорта, типы складских процессов и операций, ставки НДС, коды, курсы и т.д.). Веб-приложения платформы KK Platform обращаются к этим файлам напрямую, что позволяет обновлять справочники без необходимости переписывать или переопубликовывать сам код программного обеспечения.
@@ -12,17 +12,18 @@ KK Platform Databases (Public)
 [
     {  
     "_meta": {    
-        "platform": "© KK Platform",    
+        "platform": "© KK Platform",
+        "part": "DB", 
         "partition": "Dictionaries",    
         "copyright": "© 2025 Конов Консалтинг (Konov Consulting). Все права защищены.",    
-        "type": "Справочник",    
+        "type": "Справочник",
         "name": "Справочник Единиц по ОКЕИ",
         "file_name": "units-okei.json",
-        "code": "units-okei",  
-        "version": "1.0.0",    
-        "github": "https://github.com/knvmxm/kk-platform-db-public",  
-        "github_direcroty": "dict", 
-        "create_date": "2026-06-15", 
+        "code": "units-okei",
+        "version": "1.0.0",
+        "github": "https://github.com/knvmxm/kk-platform-db-public",
+        "github_direcroty": "dict",
+        "create_date": "2026-06-15",
         "last_updated": "2026-06-15"  
     },  
     
@@ -32,7 +33,7 @@ KK Platform Databases (Public)
     }
 ]
 
--- Текущий список справочников
+-- Текущий список справочников:
 --- kk-platform-dict-units-okei.json - Общероссийский классификатор единиц измерения (ОКЕИ)
 --- kk-platform-dict-units-logitics.json - Единицы измерения применяемые в логистике (в том числе единицы входящие в ОКЕИ)
 --- kk-platform-dict-units-wms.json - Единицы измерения необходимые для работы WMS (Warehouse Management System) (в том числе единицы входящие в ОКЕИ)

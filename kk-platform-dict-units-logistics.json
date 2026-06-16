@@ -4,7 +4,7 @@
     "partition": "Dictionaries",
     "copyright": "© 2025 Конов Консалтинг (Konov Consulting). Все права защищены.",
     "type": "Справочник",
-    "name": "Справочник Единиц используемых в логистике",
+    "name": "Единицы измерения применяемые в логистике",
     "file_name": "units-logistics.json",
     "code": "units-logistics",
     "version": "1.0.0",

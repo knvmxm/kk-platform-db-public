@@ -9,7 +9,8 @@ KK Platform Databases (Public)
 
 -- Пример формата файла:
 
-{  
+[
+    {  
     "_meta": {    
         "platform": "© KK Platform",    
         "partition": "Dictionaries",    
@@ -25,10 +26,11 @@ KK Platform Databases (Public)
         "last_updated": "2026-06-15"  
     },  
     
-    "data": [    
-        { "code": "166", "name": "Килограмм", "symbol": "кг" }  
-    ]
-}
+        "data": [    
+            { "code": "166", "name": "Килограмм", "symbol": "кг" }  
+        ]
+    }
+]
 
 -- Текущий список справочников
 --- kk-platform-dict-units-okei.json - Общероссийский классификатор единиц измерения (ОКЕИ)
@@ -43,9 +45,9 @@ KK Platform Databases (Public)
 -- Пример на JavaScript:
 
 async function getOKEI() {
-    const url = 'https://raw.githubusercontent.com/knvmxm/kk-platform-db-public/main/okei.json';
+    const url = 'https://raw.githubusercontent.com/knvmxm/kk-platform-db-public/main/kk-platform-dict-units-okei.json';
     
-   try {
+    try {
         const response = await fetch(url + '?t=' + Date.now()); // ?t= для защиты от кэширования
         if (!response.ok) throw new Error('Network response was not ok');
         

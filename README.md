@@ -73,7 +73,7 @@ async function getLogisticsUnits() {
     const url = 'https://raw.githubusercontent.com/knvmxm/kk-platform-db-public/main/kk-platform-dict-units-logitics.json';
     
     try {
-        const response = await fetch(url + '?t=' + Date.now()); // ?t= для защиты от кэширования
+        const response = await fetch(url + '?t=' + Date.now()); // ?t= для защиты от кэширования (получаем всегда актуальный справочник)
         if (!response.ok) throw new Error('Network response was not ok');
         
         const json = await response.json();
